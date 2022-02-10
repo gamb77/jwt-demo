@@ -1,7 +1,6 @@
 package fi.gamb77.jwtdemo.security;
 
 import fi.gamb77.jwtdemo.model.User;
-import fi.gamb77.jwtdemo.security.UserPrincipal;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.List;
@@ -14,7 +13,8 @@ public class UserMapper {
                 .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getName()))
                 .collect(Collectors.toList());
 
-        userPrincipal.setUsername(user.getUsername());
+        userPrincipal.setId(user.getId());
+        userPrincipal.setUsername(user.getUserName());
         userPrincipal.setPassword(user.getPassword());
         userPrincipal.setEnabled(user.isEnabled());
         userPrincipal.setAuthorities(authorities);

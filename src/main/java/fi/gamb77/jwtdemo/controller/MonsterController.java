@@ -52,4 +52,5 @@ public class MonsterController {
         monsterService.deleteMonster(id);
         return ResponseEntity.ok().body("Monster removed successfully!");
     }
+
 }

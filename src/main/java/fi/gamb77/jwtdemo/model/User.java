@@ -2,24 +2,27 @@ package fi.gamb77.jwtdemo.model;
 
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class User {
-
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
+public class User extends BaseEntity {
 
     @Column(nullable = false)
-    private String username;
+    private String userName;
 
     @Column(nullable = false)
     private String password;
 
     @Column(nullable = false)
     private boolean enabled;
+
+    @Column(columnDefinition = "TIMESTAMP")
+    private LocalDateTime lastLogin;
+
+    @Column
+    private Long loginCount;
 
     @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(
@@ -29,35 +32,50 @@ public class User {
     )
     private List<Role> roles;
 
-    public Long getId() {
-        return id;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getUsername() {
-        return username;
-    }
-    public void setUsername(String username) {
-        this.username = username;
-    }
     public String getPassword() {
         return password;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
+
     public boolean isEnabled() {
         return enabled;
     }
+
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
+    public LocalDateTime getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(LocalDateTime lastLogin) {
+        this.lastLogin = lastLogin;
+    }
+
+    public Long getLoginCount() {
+        return loginCount;
+    }
+
+    public void setLoginCount(Long loginCount) {
+        this.loginCount = loginCount;
+    }
+
     public List<Role> getRoles() {
         return roles;
     }
+
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }

@@ -32,7 +32,9 @@ public class SwaggerConfigurations {
                 .useDefaultResponseMessages(false)//
                 .securitySchemes(Collections.singletonList(apiKey()))
                 .securityContexts(Collections.singletonList(securityContext()))
-                .tags(new Tag("monsters", "Operations for monsters"))//
+                .tags(new Tag("monsters", "Operations for monsters"),
+                        new Tag("auth", "Authorization end point"),
+                        new Tag("events", "Events from the system"))//
                 .genericModelSubstitutes(Optional.class);
     }
 

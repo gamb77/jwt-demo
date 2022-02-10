@@ -7,6 +7,7 @@ import java.util.Collection;
 
 public class UserPrincipal implements UserDetails {
 
+    private Long id;
     private String username;
     private String password;
     private boolean enabled;
@@ -15,6 +16,14 @@ public class UserPrincipal implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
