@@ -9,13 +9,15 @@ public class MonsterMapper {
         monsterDTO.setId(monster.getId());
         monsterDTO.setName(monster.getName());
         monsterDTO.setDescription(monster.getDescription());
+        monsterDTO.setSecret(monster.getSecret());
         return monsterDTO;
     }
 
     public static Monster dtoToEntity(MonsterDTO monsterDTO) {
         Monster monster = new Monster();
-        monster.setName(monster.getName());
-        monster.setDescription(monster.getDescription());
+        monster.setName(monsterDTO.getName());
+        monster.setDescription(monsterDTO.getDescription());
+        monster.setSecret(monsterDTO.getSecret());
         return monster;
     }
 }

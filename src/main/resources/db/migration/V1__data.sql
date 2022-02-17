@@ -51,7 +51,8 @@ CREATE TABLE monsters (
   created_date TIMESTAMP NOT NULL,
   created_by VARCHAR NOT NULL,
   name VARCHAR NOT NULL,
-  description VARCHAR NOT NULL
+  description VARCHAR NOT NULL,
+  secret VARCHAR
 );
 
 INSERT INTO monsters (created_date, created_by, name, description) VALUES

@@ -8,11 +8,17 @@ Tech things tested:
  - Automatic auditing for entities
  - ActionFactory for running different tasks
  - Events
+ - DB Column-level Encrypt/decrypt 
+ - application.properties encryption
 
 TODO: 
 
- - Encrypt/decrypt DB
+ - ???
  - 
     
+## Usage
+
+Starting swagger: 
+http://localhost:8080/swagger-ui.html
 
  
